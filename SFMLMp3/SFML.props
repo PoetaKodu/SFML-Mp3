@@ -3,12 +3,17 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <SFMLDirectory>E:\Programowanie\Biblioteki\SFML-2.4.2\</SFMLDirectory>
+    <MPGDirectory>E:\Programowanie\Biblioteki\mpg123-1.25.8-x86\</MPGDirectory>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
   <ItemGroup>
     <BuildMacro Include="SFMLDirectory">
       <Value>$(SFMLDirectory)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="MPGDirectory">
+      <Value>$(MPGDirectory)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
     </BuildMacro>
   </ItemGroup>

@@ -99,8 +99,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SFMLDirectory)lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-audio-s-d.lib;sfml-system-s-d.lib;openal32.lib;ogg.lib;vorbis.lib;vorbisfile.lib;vorbisenc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SFMLDirectory)lib;$(MPGDirectory)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmpg123.lib;sfml-audio-s-d.lib;sfml-system-s-d.lib;openal32.lib;ogg.lib;vorbis.lib;vorbisfile.lib;vorbisenc.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -134,8 +134,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SFMLDirectory)lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-audio-s.lib;sfml-system-s.lib;openal32.lib;ogg.lib;vorbis.lib;vorbisfile.lib;vorbisenc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SFMLDirectory)lib;$(MPGDirectory)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmpg123.lib;sfml-audio-s.lib;sfml-system-s.lib;openal32.lib;ogg.lib;vorbis.lib;vorbisfile.lib;vorbisenc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -157,11 +157,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="MP3.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MP3.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
